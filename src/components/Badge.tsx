@@ -1,10 +1,10 @@
 import { type VariantProps, cva } from 'class-variance-authority';
-import { Text, View } from 'react-native';
+import { Image, ImageProps, Text, View } from 'react-native';
 
 import { cn } from '../lib/utils';
 
 const badgeVariants = cva(
-  'flex flex-row items-center rounded-full px-2 py-1 text-xs font-semibold',
+  'flex flex-row items-center px-4 py-1 text-xs gap-1',
   {
     variants: {
       variant: {
@@ -35,16 +35,19 @@ export interface BadgeProps
     VariantProps<typeof badgeVariants> {
   label: string;
   labelClasses?: string;
+  icon: ImageProps
 }
 function Badge({
   label,
   labelClasses,
   className,
   variant,
+  icon,
   ...props
 }: BadgeProps) {
   return (
     <View className={cn(badgeVariants({ variant }), className)} {...props}>
+      <Image source={icon} className="w-4 h-4"/>
       <Text className={cn(badgeTextVariants({ variant }), labelClasses)}>
         {label}
       </Text>
