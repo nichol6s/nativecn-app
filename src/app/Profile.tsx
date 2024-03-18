@@ -17,7 +17,7 @@ export function Profile() {
         <View className="flex-1 bg-gray-700">
             <ScrollView>
                 <Image
-                    source={require("@/assets/banner.png")}
+                    source={require("@/assets/banner.jpg")}
                     className="w-full h-52 -mb-16"
                 />
 

@@ -47,7 +47,7 @@ function Badge({
 }: BadgeProps) {
   return (
     <View className={cn(badgeVariants({ variant }), className)} {...props}>
-      <Image source={icon} className="w-4 h-4"/>
+      <Image source={icon} className="w-6 h-6"/>
       <Text className={cn(badgeTextVariants({ variant }), labelClasses)}>
         {label}
       </Text>
